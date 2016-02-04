@@ -9,12 +9,26 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	console.log("Javascript connected!");
+	//console.log("Javascript connected!");
+
+	var object = $(".friendList");
+	//console.log(object.find('a').text());
+	var i,name1,name,anagram;
+	for(object){
+		name  = $(this).find("a");
+		console.log(name.text());
+		anagram = name.click(anagrammedName(name));
+	}
+//	console.log("name= "+ name);
+	//var anagram = name.click(anagrammedName(name));
+	//console.log(anagram);
+	//name.text(anagram);
 }
 
-function anagrammedName(name) {
-	// Thanks, Internet Anagram Server!
-	
+function anagrammedName(nameP) {
+
+	name = nameP.text();
+	//nameP.preventDefault();
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
