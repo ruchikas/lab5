@@ -22,11 +22,12 @@
 		<div class="friendList">
 		{{#each friends}}
 			<img class="img-responsive" src="{{imageURL}}"/>
-			<h3><a href="#">{{name}}</a></h3>
+			<h3><a class="friendName" href="#">{{name}}</a></h3>
 			<p>{{description}}</p>
+			<hr/>
 		{{/each}}
 		</div>
-		<hr/>
+		
 	
 	<form id="addFriendForm" role="form" method="get" action="/add">
 		<h3>Add a friend</h3>

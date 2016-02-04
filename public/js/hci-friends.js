@@ -11,24 +11,15 @@ $(document).ready(function() {
 function initializePage() {
 	//console.log("Javascript connected!");
 
-	var object = $(".friendList");
-	//console.log(object.find('a').text());
-	var i,name1,name,anagram;
-	for(object){
-		name  = $(this).find("a");
-		console.log(name.text());
-		anagram = name.click(anagrammedName(name));
-	}
-//	console.log("name= "+ name);
-	//var anagram = name.click(anagrammedName(name));
-	//console.log(anagram);
-	//name.text(anagram);
+	var object = $(".friendName").click(function(){
+		var name = $(this).text();
+		var anagram = anagrammedName(name);
+		$(this).text(anagram);
+	});
 }
 
-function anagrammedName(nameP) {
-
-	name = nameP.text();
-	//nameP.preventDefault();
+function anagrammedName(name) {
+	console.log(name);
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
